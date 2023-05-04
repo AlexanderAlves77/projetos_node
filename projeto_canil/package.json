@@ -1,0 +1,12 @@
+{
+  "name": "projeto_canil",
+  "version": "1.0.0",
+  "description": "Projeto feito no módulo do curso Node + Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alexander Alves",
+  "license": "ISC"
+}
