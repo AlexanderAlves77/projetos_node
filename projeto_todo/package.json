@@ -1,7 +1,7 @@
 {
-  "name": "node_mod_api",
+  "name": "projeto_todo",
   "version": "1.0.0",
-  "description": "Projeto inicial de api",
+  "description": "Projeto inicial de TODO",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
