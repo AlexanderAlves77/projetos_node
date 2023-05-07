@@ -1,17 +1,11 @@
 import { Router } from 'express';
-import * as ApiController from '../controllers/apiController';
+import * as TodoController from '../controllers/todo.controller';
 
 const router = Router();
 
-router.get('/ping', ApiController.ping);
-router.get('/random', ApiController.random);
-router.get('/nome/:nome', ApiController.nome);
-
-router.get('/frase/aleatoria', ApiController.randomPhrase);
-router.get('/frase/:id', ApiController.getPhrase);
-router.put('/frase/:id', ApiController.putPhrase);
-router.delete('/frase/:id', ApiController.delPhrase);
-router.post('/frases', ApiController.createPhrase);
-router.get('/frases', ApiController.listPhrases);
+router.get('/todo', TodoController.all);
+router.post('/todo', TodoController.add);
+router.put('/todo/:id', TodoController.update);
+router.delete('/todo/:id', TodoController.remove);
 
 export default router;
