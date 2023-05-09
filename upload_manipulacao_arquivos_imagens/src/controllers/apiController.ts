@@ -75,11 +75,23 @@ export const randomPhrase = async (req: Request, res: Response) => {
 }
 
 export const uploadFile = (req: Request, res: Response) => {
-  let avatar = req.body.file
-  if(avatar) {
-
-  } else {
-    res.json({ error: 'Não há arquivo anexado.' });
-  }
+  console.log("FILE", req.file);
+  console.log("FILES", req.files);
+  
   res.json({});
 }
+
+
+/*
+export const uploadFile = (req: Request, res: Response) => {
+  type UploadTypes = {
+    avatar: Express.Multer.File[],
+    gallery: Express.Multer.File[],
+  }
+  
+  const files = req.files as UploadTypes;
+  console.log("ARQUIVOS", files.avatar);
+  console.log("GALLERY", files.gallery);
+  
+  res.json({});
+}*/
