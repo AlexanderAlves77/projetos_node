@@ -73,3 +73,13 @@ export const randomPhrase = async (req: Request, res: Response) => {
     res.json({ error: 'Não há frases cadastradas.' });
   }
 }
+
+export const uploadFile = (req: Request, res: Response) => {
+  let avatar = req.body.file
+  if(avatar) {
+
+  } else {
+    res.json({ error: 'Não há arquivo anexado.' });
+  }
+  res.json({});
+}

@@ -1,6 +1,10 @@
 import { Router } from 'express';
+import multer from 'multer';
 import * as ApiController from '../controllers/apiController';
 
+const upload = multer({
+  dest: './tmp'
+});
 const router = Router();
 
 router.get('/ping', ApiController.ping);
@@ -13,5 +17,7 @@ router.put('/frase/:id', ApiController.putPhrase);
 router.delete('/frase/:id', ApiController.delPhrase);
 router.post('/frases', ApiController.createPhrase);
 router.get('/frases', ApiController.listPhrases);
+
+router.post('/upload', upload.single('avatar'), ApiController.uploadFile);
 
 export default router;
