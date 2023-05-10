@@ -1,7 +1,7 @@
 {
-  "name": "node_mod_api",
+  "name": "node_teste_tdd",
   "version": "1.0.0",
-  "description": "Projeto inicial de api",
+  "description": "Projeto Node de Teste e TDD",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,8 +15,6 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mysql2": "^3.3.0",
-    "pg": "^8.10.0",
-    "pg-hstore": "^2.3.4",
     "sequelize": "^6.31.1",
     "validator": "^13.9.0"
   },
