@@ -12,7 +12,7 @@ describe('Testing the library Math', () => {
   });
   
   it('should divide two numbers correctly', () => {
-    const response = Math.sum(14, 2);
+    const response = Math.div(14, 2);
     expect(response).toBe(7);
   });
   
