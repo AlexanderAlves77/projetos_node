@@ -16,3 +16,7 @@ export const Math = {
     return n1 * n2;
   },
 }
+
+
+ 
+ 

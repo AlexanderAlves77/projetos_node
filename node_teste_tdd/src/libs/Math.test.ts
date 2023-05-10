@@ -3,6 +3,11 @@ import { Math } from './Math';
 
 describe('Testing the library Math', () => {
 
+  /* beforeEach(() => {}) */
+  /* afterEach(() => {}) */
+  /* beforeAll(() => {}) */
+  /* afterAll(() => {}) */
+
   it('should sum two numbers correctly', () => {
     const response = Math.sum(5, 10);
     expect(response).toBe(15);
@@ -56,5 +61,11 @@ describe('Testing the library Math', () => {
   it('verificar o email se é válido', () => {
     const response = 'aeca@gmail.com';
     expect(response).toMatch(/[a-z]@[a-z].[a-z]/);
+  });
+
+  it('a lista de compras tem molho de tomate nela', () => {
+    const produtos = ['fraldas', 'sacos de lixo', 'papel toalha', 
+      'leite', 'molho de tomate'];
+    expect(produtos).toContain('molho de tomate');
   });
 });
