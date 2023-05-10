@@ -4,7 +4,7 @@
   "description": "Projeto Node de Teste e TDD",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "set NODE_ENV=test& jest --runInBand",
     "start-dev": "nodemon -e ts,json src/server.ts"
   },
   "keywords": [],

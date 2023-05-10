@@ -21,6 +21,4 @@ server.use((req: Request, res: Response ) => {
 })
 
 
-
-
 server.listen(process.env.PORT, () => console.log('Servidor rodando na porta 4000.'));
