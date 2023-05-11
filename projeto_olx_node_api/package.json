@@ -1,0 +1,14 @@
+{
+  "name": "projeto_olx_node_api",
+  "version": "1.0.0",
+  "description": "Projeto OLX Node API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "startdev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Alexander Alves",
+  "license": "ISC"
+}
