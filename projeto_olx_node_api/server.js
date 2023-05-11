@@ -5,9 +5,8 @@ const cors = require('cors')
 const fileupload = require('express-fileupload')
 
 mongoose.connect(process.env.DATABASE, {
-  useNewUrlparse: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
+  maxPoolSize: 50,
+  wtimeoutMS: 2500
 })
 mongoose.Promise = global.Promise
 mongoose.connection.on('error', (error) => {
@@ -27,4 +26,4 @@ server.get('/ping', (req, res) => {
   res.json({ pong: true })
 })
 
-app.listen(process.env.PORT, () => console.log('- Rodando na porta 5000.'))
+server.listen(process.env.PORT, () => console.log('- Rodando na porta 5000.'))
