@@ -5,10 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "startdev": "nodemon index.js"
+    "start": "node server.js",
+    "startdev": "nodemon server.js"
   },
   "keywords": [],
   "author": "Alexander Alves",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jimp": "^0.22.8",
+    "mongoose": "^7.1.1",
+    "uuid": "^9.0.0"
+  }
 }
