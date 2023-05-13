@@ -255,7 +255,32 @@ module.exports = {
 
     await Ad.findByIdAndUpdate(id, { $set: updates })
 
-    
+    if(req.files && req.files.img) {
+      const adI = await Ad.findById(id);
+
+      if(req.files.img.length == undefined) {
+          if(['image/jpeg', 'image/jpg', 'image/png'].includes(req.files.img.mimetype)) {
+              let url = await addImage(req.files.img.data);
+              adI.images.push({
+                  url,
+                  default: false
+              });
+          }
+      } else {
+          for(let i=0; i < req.files.img.length; i++) {
+              if(['image/jpeg', 'image/jpg', 'image/png'].includes(req.files.img[i].mimetype)) {
+                  let url = await addImage(req.files.img[i].data);
+                  adI.images.push({
+                      url,
+                      default: false
+                  });
+              }
+          }
+      }
+
+        adI.images = [...adI.images];
+        await adI.save();
+    }
 
     res.json({ error: '' })
   }
