@@ -40,6 +40,17 @@ module.exports = {
       return
     }
 
+    if(cat.length > 12) {
+      res.json({ error: 'Id de categoria inválido' })
+      return
+    }
+
+    const category = await Category.findById(cat) 
+    if(!category){
+      res.json({ error: 'Categoria inexistente' })
+      return
+    }
+
     if(price) {
       price = price.replace('.', '').replace(',','.').replace('R$ ', '')
       price = parseFloat(price)
