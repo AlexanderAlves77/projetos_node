@@ -212,6 +212,51 @@ module.exports = {
     })
   },
   editAction: async (req, res) => {
+    let { id } = req.params
+    let { title, status, price, priceneg, desc, cat, images, token } = req.body
 
+    if(id.length > 12) {
+      res.json({ error: 'Retorno inválido' })
+      return
+    }
+
+    const ad = await Ad.findById(id).exec() 
+    if(!ad) {
+      res.json({ error: 'Anúncio inexistente' })
+      return
+    }
+
+    const user = await User.findOne({ token: token }).exec()
+    if(user._id.toString() !== ad.idUser) {
+      res.json({ error: 'Este anúncio não é seu' })
+      return
+    }
+
+    let updates = {}
+
+    if(title) updates.title = title 
+    if(price) {
+      price = price.replace('.', '').replace(',','.').replace('R$ ', '')
+      price = parseFloat(price)
+      updates.price = price
+    } 
+    if(priceneg) updates.priceNegotiable = priceneg 
+    if(status) updates.status = status 
+    if(desc) updates.description = desc 
+    if(cat) {
+      const category = await Category.findOne({ slug: cat }).exec()
+      if(!category) {
+        res.json({ error: 'Categoria inexistente' })
+        return
+      }
+      updates.description = category._id.toString()
+    } 
+    if(images) updates.images = images
+
+    await Ad.findByIdAndUpdate(id, { $set: updates })
+
+    
+
+    res.json({ error: '' })
   }
 }
